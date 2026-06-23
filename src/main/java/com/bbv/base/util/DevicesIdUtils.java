@@ -1,5 +1,6 @@
 package com.bbv.base.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -106,6 +107,7 @@ public class DevicesIdUtils {
      * 获取设备序列号
      * Android 10+ 需要 READ_PHONE_STATE 权限，可能返回 null
      */
+    @SuppressLint("MissingPermission")
     private static String getSerialNum() {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
