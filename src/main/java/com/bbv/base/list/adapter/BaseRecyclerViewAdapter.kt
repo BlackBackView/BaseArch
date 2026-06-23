@@ -1,4 +1,4 @@
-﻿package com.bbv.base.list.adapter
+package com.bbv.base.list.adapter
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes

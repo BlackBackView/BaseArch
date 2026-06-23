@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net.interceptor
+package com.bbv.base.net.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Request

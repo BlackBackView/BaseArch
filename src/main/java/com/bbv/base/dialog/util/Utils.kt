@@ -1,4 +1,4 @@
-﻿package com.bbv.base.dialog.util
+package com.bbv.base.dialog.util
 
 import android.content.res.Resources
 import android.graphics.Outline

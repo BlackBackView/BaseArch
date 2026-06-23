@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util
+package com.bbv.base.util
 
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData

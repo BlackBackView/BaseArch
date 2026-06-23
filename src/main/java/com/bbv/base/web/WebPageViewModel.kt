@@ -1,4 +1,4 @@
-﻿package com.bbv.base.web
+package com.bbv.base.web
 
 import com.bbv.base.mvvm.BaseViewModel
 

@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util
+package com.bbv.base.util
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager

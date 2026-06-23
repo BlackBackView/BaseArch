@@ -1,4 +1,4 @@
-﻿package com.bbv.base.widget
+package com.bbv.base.widget
 
 import android.content.Context
 import android.graphics.Color

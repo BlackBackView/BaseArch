@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net.convert
+package com.bbv.base.net.convert
 
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableDouble

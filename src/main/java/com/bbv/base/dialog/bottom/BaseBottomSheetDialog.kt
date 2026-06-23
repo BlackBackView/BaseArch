@@ -1,4 +1,4 @@
-﻿package com.bbv.base.dialog.bottom
+package com.bbv.base.dialog.bottom
 
 import android.app.Dialog
 import android.content.Context

@@ -1,4 +1,4 @@
-﻿package com.bbv.base.navigation
+package com.bbv.base.navigation
 
 import android.os.Bundle
 import androidx.annotation.CallSuper

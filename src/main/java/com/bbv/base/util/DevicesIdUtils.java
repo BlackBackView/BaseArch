@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util;
+package com.bbv.base.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

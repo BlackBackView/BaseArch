@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net.exception
+package com.bbv.base.net.exception
 
 import com.bbv.base.net.CommonResponse
 

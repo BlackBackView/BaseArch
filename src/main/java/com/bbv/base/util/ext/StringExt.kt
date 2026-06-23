@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util.ext
+package com.bbv.base.util.ext
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

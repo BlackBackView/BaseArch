@@ -1,4 +1,4 @@
-﻿package com.bbv.base.ext
+package com.bbv.base.ext
 
 import java.io.IOException
 

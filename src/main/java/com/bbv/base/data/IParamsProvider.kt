@@ -1,4 +1,4 @@
-﻿package com.bbv.base.data
+package com.bbv.base.data
 
 interface IParamsProvider {
     fun isDebug(): Boolean

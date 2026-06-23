@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net.exception
+package com.bbv.base.net.exception
 
 /**
  * 网络请求错误类型

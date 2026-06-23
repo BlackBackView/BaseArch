@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net
+package com.bbv.base.net
 
 /**
  * 网络层全局配置

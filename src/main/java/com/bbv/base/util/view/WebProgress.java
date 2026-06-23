@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util.view;
+package com.bbv.base.util.view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

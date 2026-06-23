@@ -1,4 +1,4 @@
-﻿package com.bbv.base.dialog
+package com.bbv.base.dialog
 
 import androidx.databinding.ViewDataBinding
 

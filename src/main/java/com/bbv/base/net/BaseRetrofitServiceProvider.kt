@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net
+package com.bbv.base.net
 
 import com.bbv.base.net.convert.CustomizeJsonAdapters
 import com.bbv.base.net.convert.FancyNumbersAdapter

@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net
+package com.bbv.base.net
 
 /**
  * 通用 API 响应体

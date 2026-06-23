@@ -1,4 +1,4 @@
-﻿package com.bbv.base.widget.decoration
+package com.bbv.base.widget.decoration
 
 import android.graphics.Rect
 import android.view.View

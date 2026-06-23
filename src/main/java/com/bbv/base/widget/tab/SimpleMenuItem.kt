@@ -1,4 +1,4 @@
-﻿package com.bbv.base.widget.tab
+package com.bbv.base.widget.tab
 
 import android.content.Context
 import android.graphics.*

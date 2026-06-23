@@ -1,4 +1,4 @@
-﻿package com.bbv.base.list.adapter
+package com.bbv.base.list.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.chad.library.adapter.base.BaseQuickAdapter

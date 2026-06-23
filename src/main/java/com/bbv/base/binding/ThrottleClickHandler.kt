@@ -1,4 +1,4 @@
-﻿package com.bbv.base.binding
+package com.bbv.base.binding
 
 import android.view.View
 

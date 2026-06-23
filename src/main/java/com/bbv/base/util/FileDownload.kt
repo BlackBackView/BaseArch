@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util
+package com.bbv.base.util
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

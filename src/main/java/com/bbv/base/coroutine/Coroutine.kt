@@ -1,4 +1,4 @@
-﻿package com.bbv.base.coroutine
+package com.bbv.base.coroutine
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

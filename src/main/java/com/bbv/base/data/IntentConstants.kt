@@ -1,4 +1,4 @@
-﻿package com.bbv.base.data
+package com.bbv.base.data
 
 object IntentConstants {
     const val INTENT_TITLE = "title"

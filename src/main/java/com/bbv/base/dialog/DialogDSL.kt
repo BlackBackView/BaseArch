@@ -1,4 +1,4 @@
-﻿package com.bbv.base.dialog
+package com.bbv.base.dialog
 
 import android.view.Gravity
 import androidx.databinding.ViewDataBinding

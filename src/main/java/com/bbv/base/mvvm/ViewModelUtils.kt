@@ -1,4 +1,4 @@
-﻿package com.bbv.base.mvvm
+package com.bbv.base.mvvm
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner

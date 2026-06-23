@@ -1,4 +1,4 @@
-﻿package com.bbv.base.dialog
+package com.bbv.base.dialog
 
 import android.content.res.Configuration
 import android.graphics.Color

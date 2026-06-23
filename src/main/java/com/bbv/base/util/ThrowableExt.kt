@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util
+package com.bbv.base.util
 
 import com.bbv.base.net.exception.ErrorKind
 import com.bbv.base.net.exception.RetrofitException

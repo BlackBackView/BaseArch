@@ -1,4 +1,4 @@
-﻿package com.bbv.base.navigation
+package com.bbv.base.navigation
 
 import android.app.Activity
 import android.content.Context

@@ -1,4 +1,4 @@
-﻿package com.bbv.base.web
+package com.bbv.base.web
 
 import android.content.ContentValues
 import android.content.Context

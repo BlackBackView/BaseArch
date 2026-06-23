@@ -1,4 +1,4 @@
-﻿@file:SuppressLint("SimpleDateFormat")
+@file:SuppressLint("SimpleDateFormat")
 
 package com.bbv.base.util
 

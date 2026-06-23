@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util
+package com.bbv.base.util
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

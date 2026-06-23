@@ -1,4 +1,4 @@
-﻿package com.bbv.base.coroutine.cache
+package com.bbv.base.coroutine.cache
 
 import java.lang.reflect.Type
 

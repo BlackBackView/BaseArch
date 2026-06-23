@@ -1,4 +1,4 @@
-﻿package com.bbv.base.list
+package com.bbv.base.list
 
 import androidx.lifecycle.MutableLiveData
 import com.bbv.base.coroutine.Coroutine

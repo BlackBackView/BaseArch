@@ -1,4 +1,4 @@
-﻿package com.bbv.base.util.ext
+package com.bbv.base.util.ext
 
 import android.content.Context
 import android.content.Intent

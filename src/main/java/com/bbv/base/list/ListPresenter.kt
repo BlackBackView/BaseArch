@@ -1,4 +1,4 @@
-﻿package com.bbv.base.list
+package com.bbv.base.list
 
 /**
  * 列表数据加载接口

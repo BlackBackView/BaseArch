@@ -1,4 +1,4 @@
-﻿package com.bbv.base.list
+package com.bbv.base.list
 
 import android.content.Context
 import android.util.Log

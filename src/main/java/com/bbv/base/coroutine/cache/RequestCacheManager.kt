@@ -1,4 +1,4 @@
-﻿package com.bbv.base.coroutine.cache
+package com.bbv.base.coroutine.cache
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types

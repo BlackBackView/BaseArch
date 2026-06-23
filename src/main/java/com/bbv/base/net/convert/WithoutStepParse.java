@@ -1,4 +1,4 @@
-﻿package com.bbv.base.net.convert;
+package com.bbv.base.net.convert;
 
 import com.bbv.base.net.CommonResponse;
 

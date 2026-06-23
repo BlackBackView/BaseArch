@@ -1,4 +1,4 @@
-﻿package com.bbv.base.mvvm
+package com.bbv.base.mvvm
 
 import com.bbv.base.ext.toShowMsg
 
