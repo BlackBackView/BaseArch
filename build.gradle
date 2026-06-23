@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'maven-publish'
+}
+
+android {
+    namespace PACKAGE_NAME
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        versionCode VERSION_CODE as Integer
+        versionName VERSION_NAME
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // AndroidX
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.fragment:fragment-ktx:1.6.2"
+
+    // Lifecycle + LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.7"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.11.0'
+
+    // Moshi (Optional — 用于 Retrofit 转换器)
+    implementation 'com.squareup.moshi:moshi:1.15.1'
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.15.1'
+    implementation 'com.squareup.moshi:moshi-kotlin:1.15.1'
+    implementation 'com.squareup.moshi:moshi-adapters:1.15.1'
+
+    // Koin (Optional — 用于 DI)
+    implementation 'io.insert-koin:koin-android:3.5.6'
+
+    // SmartRefreshLayout
+    api 'io.github.scwang90:refresh-layout-kernel:2.1.0'
+    api 'io.github.scwang90:refresh-header-classics:2.1.0'
+    api 'io.github.scwang90:refresh-footer-classics:2.1.0'
+
+    // BRVAH — BaseRecyclerViewAdapterHelper
+    api 'io.github.cymchad:BaseRecyclerViewAdapterHelper:3.0.14'
+
+    // Glide (for BindingAdapter image loading)
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    // OkHttp + Logging
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+
+    // Retrofit + Moshi Converter (Optional — 用于网络层)
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.11.0'
+}
+
+// ==================== JitPack / Maven Publishing ====================
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier = 'sources'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = GROUP
+                artifactId = POM_ARTIFACT_ID
+                version = VERSION_NAME
+
+                pom {
+                    name = POM_NAME
+                    description = POM_DESCRIPTION
+                    url = POM_URL
+
+                    licenses {
+                        license {
+                            name = POM_LICENSE_NAME
+                            url = POM_LICENSE_URL
+                            distribution = POM_LICENSE_DIST
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = POM_DEVELOPER_ID
+                            name = POM_DEVELOPER_NAME
+                            email = POM_DEVELOPER_EMAIL
+                        }
+                    }
+
+                    scm {
+                        connection = POM_SCM_CONNECTION
+                        developerConnection = POM_SCM_DEV_CONNECTION
+                        url = POM_SCM_URL
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <!-- Fragment 容器 Activity，由 IntentStarter.startFragment 自动调用 -->
+        <activity
+            android:name=".navigation.FragmentContainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

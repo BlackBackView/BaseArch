@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_sweet_bg_color">#ffffff</color>
+    <color name="dialog_sweet_tv_color">#888888</color>
+</resources>

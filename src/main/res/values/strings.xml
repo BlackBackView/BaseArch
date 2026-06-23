@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_loading">加载中…</string>
+    <string name="base_empty">暂无数据</string>
+    <string name="base_error">当前网络不稳定，请重试。</string>
+    <string name="base_retry">重试</string>
+    <string name="base_load_more_loading">正在加载…</string>
+    <string name="base_load_more_finish">加载完成</string>
+    <string name="base_load_more_error">加载失败，点击重试</string>
+    <string name="base_load_more_end">没有更多数据</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- 背景 -->
+    <path
+        android:fillColor="#E8E8E8"
+        android:pathData="M0,0h120v120H0z" />
+    <!-- 图片图标：山+太阳 -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M20,95 L50,45 L65,65 L80,50 L100,95 Z" />
+    <!-- 太阳 -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M75,25m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+</vector>

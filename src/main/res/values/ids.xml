@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="state_view" type="id" />
+    <item name="appPageStateContainer" type="id" />
+    <item name="recyclerView" type="id" />
+    <item name="refreshLayoutView" type="id" />
+    <item name="ivTabIcon" type="id" />
+    <item name="tvTabText" type="id" />
+    <item name="tab_group" type="id" />
+</resources>
