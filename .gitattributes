@@ -1,0 +1,17 @@
+# 统一换行符为 LF，防止 CRLF/BOM 问题
+*.java    text eol=lf working-tree-encoding=UTF-8
+*.kt      text eol=lf working-tree-encoding=UTF-8
+*.xml     text eol=lf working-tree-encoding=UTF-8
+*.gradle  text eol=lf working-tree-encoding=UTF-8
+*.groovy  text eol=lf working-tree-encoding=UTF-8
+*.properties text eol=lf working-tree-encoding=ISO-8859-1
+
+# 二进制文件禁止自动转换
+*.jar     binary
+*.aar     binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.keystore binary
