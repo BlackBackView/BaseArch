@@ -5,8 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
@@ -37,20 +35,18 @@ private const val BUNDLE_FINISH_WITHOUT_ANIM = "finish_without_anim"
  * // 2. 启动 Activity 并获取返回结果
  * IntentStarter.create(this)
  *     .withData("key", value)
- *     .withActivityResultCallback { result ->
- *         if (result.resultCode == Activity.RESULT_OK) {
- *             val data = result.data?.getStringExtra("resultKey")
- *             // 处理返回结果
- *         }
+ *     .withActivityResultCallback { data ->
+ *         val result = data.getStringExtra("resultKey")
+ *         // 处理返回结果
  *     }
  *     .startActivity(SomeActivity::class.java)
  *
  * // 3. 启动 Fragment 并获取返回结果（直接在跳转处连接业务逻辑）
  * IntentStarter.create(this)
  *     .withData("type", type)
- *     .withActivityResultCallback { result ->
+ *     .withActivityResultCallback { data ->
  *         // 在这里直接处理返回的业务逻辑
- *         val resultData = result.data?.getStringExtra("resultKey")
+ *         val resultData = data.getStringExtra("resultKey")
  *         updateUI(resultData)
  *     }
  *     .startFragment(PickerFragment::class.java)
@@ -63,7 +59,7 @@ class IntentStarter(private val mContentObj: Any) {
     private var mActivityFlag = 0
     private var mOpenWithoutAnim: Boolean = false
     private var mFinishWithoutAnim: Boolean = false
-    private var mActivityResultCallback: ActivityResultCallback<ActivityResult>? = null
+    private var mActivityResultCallback: ((Intent) -> Unit)? = null
     private var mActivityResultOptions: ActivityOptionsCompat? = null
 
     // ============ 配置方法 ============
@@ -113,11 +109,13 @@ class IntentStarter(private val mContentObj: Any) {
     /**
      * 设置 Activity Result 回调
      *
-     * 启动 Activity/Fragment 后，在返回时通过此回调接收结果数据。
+     * 启动 Activity/Fragment 后，在返回时通过此回调接收结果 Intent。
      * 无需在 onActivityResult 中处理，业务逻辑可以直接写在这里。
+     *
+     * @param activityResultCallback (data: Intent) -> Unit
      */
     fun withActivityResultCallback(
-        activityResultCallback: ActivityResultCallback<ActivityResult>?
+        activityResultCallback: ((Intent) -> Unit)?
     ): IntentStarter {
         mActivityResultCallback = activityResultCallback
         return this
@@ -218,7 +216,7 @@ class IntentStarter(private val mContentObj: Any) {
         flags: Int,
         openWithoutAnim: Boolean,
         finishWithoutAnim: Boolean,
-        activityResultCallback: ActivityResultCallback<ActivityResult>? = null,
+        activityResultCallback: ((Intent) -> Unit)? = null,
         activityResultOptions: ActivityOptionsCompat? = null
     ) {
         Log.d(TAG, "startActivity: target=$target, bundle=$bundle, requestCode=$requestCode")
@@ -243,7 +241,7 @@ class IntentStarter(private val mContentObj: Any) {
         options: Bundle?,
         requestCode: Int,
         isOpenWithoutAnim: Boolean,
-        activityResultCallback: ActivityResultCallback<ActivityResult>? = null,
+        activityResultCallback: ((Intent) -> Unit)? = null,
         activityResultOptions: ActivityOptionsCompat? = null
     ) {
         if (activityResultCallback == null) {
@@ -272,9 +270,12 @@ class IntentStarter(private val mContentObj: Any) {
                 .add(tempFragment, "intentStarter_result")
                 .commitNow()
             val launcher = tempFragment.registerForActivityResult(
-                ActivityResultContracts.StartActivityForResult(),
-                activityResultCallback
-            )
+                ActivityResultContracts.StartActivityForResult()
+            ) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    activityResultCallback(result.data ?: Intent())
+                }
+            }
             tempFragment.lifecycleScope.launch {
                 launcher.launch(intent, activityResultOptions)
             }
